@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="eventlistener"
+            type="com.xiarui.work.login.LoginAty.EventListener" />
+    </data>
+    <RelativeLayout
+        android:id="@+id/activity_login"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/img_bg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px398dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/x_bg" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="right"
+                android:layout_marginRight="@dimen/px20dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/px56dp"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10646"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/px42dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="阿坝师范学院"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/px42dp"/>
+
+            </LinearLayout>
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/img_bg"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="-20dp"
+            android:background="@mipmap/xx_ju">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/px70dp"
+                android:layout_marginLeft="@dimen/px70dp"
+                android:layout_marginRight="@dimen/px70dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="登录"
+                    android:textColor="#262626"
+                    android:textSize="@dimen/px42dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/px40dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+                        <EditText
+                            android:id="@+id/ab_edit_user"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/px30dp"
+                            android:background="@null"
+                            android:hint="请输入用户名"
+                            android:text="@{eventlistener.name}"
+                            app:addTextChangedListener="@{eventlistener.textWatcher}"
+                            android:singleLine="true"
+                            android:textColor="@color/ab_txt_222_color"
+                            android:textSize="@dimen/px32dp"
+                            android:layout_centerInParent="true"
+                            />
+                    </RelativeLayout>
+                </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px1dp"
+                    android:layout_marginTop="@dimen/px10dp"
+                    android:background="#cccccc"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/px40dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+                        <EditText
+                            android:id="@+id/ab_edit_pwd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/px30dp"
+                            android:background="@null"
+                            android:hint="请输入密码"
+                            android:password="true"
+                            android:singleLine="true"
+                            android:text="@{eventlistener.pwd}"
+                            app:addTextChangedListener="@{eventlistener.pwdtextWatcher}"
+                            android:textColor="@color/ab_txt_222_color"
+                            android:textSize="@dimen/px32dp"
+                            android:layout_centerInParent="true"
+                            />
+                    </RelativeLayout>
+                    <TextView
+                        android:id="@+id/ab_forget_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="忘记密码?"
+                        android:textColor="@color/ab_all_text_color"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/px28dp"/>
+                </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px1dp"
+                    android:layout_marginTop="@dimen/px10dp"
+                    android:background="#ccc"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/px80dp">
+                    <TextView
+                        android:id="@+id/ab_login_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/px90dp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/ab_new_login_40px"
+                        android:onClick="@{(view)->eventlistener.btnClick(view)}"
+                        android:gravity="center"
+                        android:text="登录"
+                        android:textColor="@color/white" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>
+

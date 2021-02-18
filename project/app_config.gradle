@@ -1,0 +1,11 @@
+ext{
+
+
+
+    // 测试环境的服务器地址，和，正式环境服务器地址
+    url = [
+            "news_url"   : "http://service-o5ikp40z-1255468759.ap-shanghai.apigateway.myqcloud.com/",
+            "release" : "http://tyrz.abtu.edu.cn/"
+    ]
+}
+
